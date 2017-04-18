@@ -50,7 +50,13 @@ function handleRequest(req, res) {
     case '/script.js':
       serveFile('public/script.js', 'text/css', req, res);
       break;
+    case '/peerReview.json':
+      serveFile('data/peerReview.json', 'application/json', req, res);
+      break;
     default:
+    case '/pointDistribution.json':
+      serveFile('data/pointDistribution.json', 'application/json', req, res);
+      break;
       res.statusCode = 404;
       res.end("Not found");
   }
